@@ -1,8 +1,8 @@
 @[TOC](目录)
 
 # 问题
-       程序运行在k8s Pod内，在开发时，如何进行快速更新调试？也就是不重启Pod的情况如何，如何热更新应用程序？
-      使用k8s环境进行应用部署，每次都需要打包成镜像，上传到镜像仓库，然后更新Deployment，等待Pod启动，整个过程较为繁琐，远不如在本机进行开发调试方便。如果遇到必须在Pod内运行的应用，那么这个等待过程难以缩减，即便是使用了CICD的自动化工具，也依然要等待很长时间。
+程序运行在k8s Pod内，在开发时，如何进行快速更新调试？也就是不重启Pod的情况如何，如何热更新应用程序？
+使用k8s环境进行应用部署，每次都需要打包成镜像，上传到镜像仓库，然后更新Deployment，等待Pod启动，整个过程较为繁琐，远不如在本机进行开发调试方便。如果遇到必须在Pod内运行的应用，那么这个等待过程难以缩减，即便是使用了CICD的自动化工具，也依然要等待很长时间。
 
 ## 思路
 
@@ -192,3 +192,10 @@ Pod列表中的日志按钮
 ### 总结
 通过制作一个带有reload脚本的容器镜像，结合[k8m](https://github.com/weibaohui/k8m)提供的Pod内文件管理功能，我们可以非常轻松的实现k8s内应用开发的快速更新，极大的降低了等待时间，欢迎各位尝试。
 
+### 演示项目地址
+为方便大家体验，特将相关源码开放，如有需要请自行获取。
+[https://github.com/weibaohui/restart-in-pod](https://github.com/weibaohui/restart-in-pod)
+
+#### 引用
+[https://github.com/weibaohui/k8m](https://github.com/weibaohui/k8m)
+[https://github.com/weibaohui/kom](https://github.com/weibaohui/kom)
