@@ -12,4 +12,4 @@ ADD reload.sh /app/reload.sh
 RUN chmod +x /app/reload.sh
 COPY --from=builder /build/demo /app/demo
 
-ENTRYPOINT ["/app/reload.sh"]
+ENTRYPOINT ["/app/reload.sh","demo","/app"]
